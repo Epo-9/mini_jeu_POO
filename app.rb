@@ -4,10 +4,6 @@ Bundler.require
 require_relative 'lib/game'
 require_relative 'lib/player'
 
-humanplayer1 = HumanPlayer.new("Julien")
-
-binding.pry
-
 
 player1 = Player.new("Josiane")
 player2 = Player.new("José")
@@ -31,6 +27,9 @@ player2.attacks(player1)
 end
 
 puts "======================"
+
+#binding.pry
+
 
 
 

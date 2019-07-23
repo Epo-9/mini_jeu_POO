@@ -55,10 +55,12 @@ class HumanPlayer < Player
 		print "et une arme de niveau #{weapon_level}"
 	end
 
+
 	def compute_damage
 		super * weapon_level
 	end
 
+		#Méthode permettant de chercher une nouvelle arme et en fonction de son niveau par raport à l'arme actuelle décide ou non de l'utiliser
 	def search_weapon
 		dice = rand(1..6)
 		puts "Tu as trouvé une arme de niveau #{dice}"
@@ -69,9 +71,25 @@ class HumanPlayer < Player
 		end		
 	end
 
+        #Méthode qui permettra à notre super héro de rechercher des packs de vie
 	def search_health_pack
 		dice = rand(1..6)
-		
+		if dice == 1
+			puts " Tu n'as rien trouvé..."
+		elsif dice == 6
+			puts "Waow, tu as trouvé un pack de +80 points de vie !"
+			if @life_points <= 20
+			@life_points += 80
+			else 
+			@life_points = 100
+			end
+ 		else puts "Bravo, tu as trouvé un pack de +50 points de vie !"
+ 			if @life_points <= 50
+			@life_points += 50
+			else
+			@life_points = 100
+			end
+		end
 	end
 
 end
